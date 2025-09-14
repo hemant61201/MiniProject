@@ -39,51 +39,27 @@ func main() {
 
 	// register device
 
-	slog.Info("Registering new device...")
-
 	go controller.RegisterDevice(router, &storage)
-
-	slog.Info("Register new device successfully")
 
 	// get devices list
 
-	slog.Info("Getting all devices...")
-
 	go controller.GetDeviceListResult(router, &storage)
-
-	slog.Info("Getting all devices successfully")
 
 	// get device by id
 
-	slog.Info("Getting device by id...")
-
 	go controller.GetDevice(router, &storage)
-
-	slog.Info("Getting device by id successfully")
 
 	// update device
 
-	slog.Info("Updating device with id...")
-
 	go controller.UpdateDevice(router, &storage)
-
-	slog.Info("Device updated successfully...")
 
 	// delete device
 
-	slog.Info("Deleting device with id...")
-
 	go controller.DeleteDevice(router, &storage)
-
-	slog.Info("Device deleted successfully")
 
 	// device monitoring data
 
-	slog.Info("Getting device monitoring info by id...")
-
 	go controller.GetMonitoringResult(router, &storage)
-
-	slog.Info("Getting device monitoring info by id successfully")
 
 	// Get Server
 
